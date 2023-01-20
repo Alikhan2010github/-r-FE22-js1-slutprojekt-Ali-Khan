@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/style.css">
+  <script src="./lib/anime.min.js"></script>
+  <script src="js/scriptnew.js" defer></script>
+
+  <title>Slut jS Project</title>
+</head>
+
+
+<body>
+  <header class="myHeader">
+    <form autocomplete="off">
+      <label for="">Image u want </label>
+      <input type="text" id="textInput">
+      <label for="">How maney</label>
+      <input type="number" id="numberInput" placeholder="0" min="1">
+      <label for="size">choose size</label>
+      <select name="sizeSelector" id="size" placeholder="choose size">
+        <option name="sizeSelector" value="w">Small</option>
+        <option name="sizeSelector" value="c">Medium</option>
+        <option name="sizeSelector" value="b">Large</option>
+      </select>
+
+      <label for="sort">Sort by</label>
+      <select name="sort" id="sort">
+        <option name="sort" value="date-posted-asc">Date</option>
+        <option name="sort" value="relevance">Relevance</option>
+        <option name="sort" value="interestingness-asc">Interestingness</option>
+
+      </select>
+
+      <button id="searchBtn" role="button">Search</button>
+
+    </form>
+
+  </header>
+  <div class="warning">Warning message: </div>
+  <div class="loader">
+    <div class="ele1"></div>
+    <div class="ele1"></div>
+    <div class="ele1"></div>
+  </div>
+  <!-- animation -->
+  <div id="img-container">
+
+  </div>
+</body>
+
+</html>
