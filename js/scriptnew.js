@@ -20,7 +20,7 @@ sizeInput.addEventListener('change', (e) => {
   sizeValue = e.target.value;
 })
 
-numberOfImages.addEventListener('keyup', (e) => {
+numberOfImages.addEventListener('change', (e) => {
   numberOfImagesValue = e.target.value;
 })
 
@@ -66,9 +66,10 @@ function setToDefault() {
   sortValue = "date-posted-asc";
   sizeValue = "w";
 
-  textInput.value = "" // replace #textInput with the ID of your text input element
+  textInput.value = ""
   numberOfImages.value = "0";
 }
+
 
 function displayMess(mess) {
   warningMessage.classList.add('showMess');
@@ -76,8 +77,10 @@ function displayMess(mess) {
 
   setTimeout(() => {
     warningMessage.classList.remove('showMess');
-  }, 2000)
+  }, 3000)
 }
+
+
 
 function getImages(event) {
   event.preventDefault();
@@ -87,14 +90,23 @@ function getImages(event) {
     setToDefault();
     return;
   }
+
+
   displayLoading()
+
   fetch(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=9d6cf409b6ebfa99d4b7d2eacbd1b63a&text=${textValue}&extras=url_${sizeValue}&sort=${sortValue}&per_page=${numberOfImagesValue}&format=json&nojsoncallback=1`)
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
+      if (data.photos.pages === 0) {
+        displayMess('There is no image with this name');
+        clearLoading();
+      }
+
       let imagelist = data.photos.photo;
       imgContainer.innerHTML = "";
 
-      console.log(imagelist)
+
       imagelist.map((item) => {
         let el = `
           <div>
@@ -103,9 +115,11 @@ function getImages(event) {
             class="box-img" />
           </div>
        `;
+
         imgContainer.innerHTML += el;
         clearLoading()
       });
+
       setToDefault();
     }).catch(() => {
       displayMess("Something went wrong");
