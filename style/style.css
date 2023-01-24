@@ -22,6 +22,7 @@ body {
   opacity: 0;
 }
 
+
 .warning {
   border: 1px solid;
   margin: 10px 0px;
@@ -62,32 +63,31 @@ form {
   justify-content: space-between;
   margin-bottom: 2rem;
   align-items: center;
-  font-weight: bolder;
   font-family: Arial, Helvetica, sans-serif;
+
 }
 
 #textInput,
 #numberInput {
   width: 7rem;
-  font-weight: bolder;
   padding: 1rem;
-  font-size: 1,9rem;
+  font-size: 1, 8rem;
   border-radius: 10px;
 }
+
+
 
 #size {
   width: 7rem;
   padding: 1rem;
-  font-weight: bolder;
-  font-size: 1,9rem;
+  font-size: 1rem;
   border-radius: 10px;
 }
 
 #sort {
   width: 7rem;
   padding: 1rem;
-  font-weight: bolder;
-  font-size: 1,9rem;
+  font-size: 1, 1rem;
   border-radius: 10px;
 }
 
@@ -103,7 +103,9 @@ button {
   position: relative;
   z-index: 0;
   user-select: none;
+
 }
+
 
 button:after {
   z-index: -1;
@@ -117,6 +119,8 @@ button:after {
   border-radius: 10px;
 }
 
+
+
 label {
   border-radius: 24px;
   line-height: 1rem;
@@ -125,7 +129,7 @@ label {
   font-size: 1.25rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   outline: none;
-  color: rgb(130, 16, 16);
+  color: rgb(228, 168, 168);
   position: relative;
   z-index: 0;
   user-select: none;
@@ -133,13 +137,15 @@ label {
   touch-action: manipulation;
 }
 
+
+
 label:after {
   z-index: -1;
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(128, 152, 196, 0.611);
+  background: rgba(42, 77, 144, 0.611);
   left: 0;
   top: 0;
   border-radius: 10px;

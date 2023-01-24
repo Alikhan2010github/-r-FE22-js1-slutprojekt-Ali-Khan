@@ -20,7 +20,7 @@ sizeInput.addEventListener('change', (e) => {
   sizeValue = e.target.value;
 })
 
-numberOfImages.addEventListener('change', (e) => {
+numberOfImages.addEventListener('keyup', (e) => {
   numberOfImagesValue = e.target.value;
 })
 
@@ -66,7 +66,7 @@ function setToDefault() {
   sortValue = "date-posted-asc";
   sizeValue = "w";
 
-  textInput.value = "" 
+  textInput.value = "" // replace #textInput with the ID of your text input element
   numberOfImages.value = "0";
 }
 
@@ -76,7 +76,7 @@ function displayMess(mess) {
 
   setTimeout(() => {
     warningMessage.classList.remove('showMess');
-  }, 3000)
+  }, 2000)
 }
 
 function getImages(event) {
